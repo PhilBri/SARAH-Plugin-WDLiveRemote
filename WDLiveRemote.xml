@@ -1,0 +1,146 @@
+<!----------------------------------------------------->
+<!--                WDLiveRemote v 0.9               -->
+<!--                                                 -->
+<!-- Authors : Phil Bri (11/2014)                    -->
+<!--  (See http://encausse.wordpress.com/s-a-r-a-h/) -->
+<!-- Description :                                   -->
+<!--    WD Live Plugin for SARAH project             -->
+<!----------------------------------------------------->
+
+<grammar version="1.0" xml:lang="fr-FR" mode="voice" root="ruleWDLiveRemote" xmlns="http://www.w3.org/2001/06/grammar" tag-format="semantics/1.0">
+    <rule id="ruleWDLiveRemote" scope="public">
+        <example>Sarah allume le W D</example>
+        <tag>out.action=new Object(); </tag>
+
+        <item>
+            Sarah 
+            <one-of>
+
+<!--- Matériel §--->                
+
+                <item>
+                    Allume
+                    <tag>out.action.cmd="w";out.action.ttsAction="J'allume le W D";</tag>
+                </item>
+
+                <item>
+                    Eteind
+                    <tag>out.action.cmd="w";out.action.ttsAction="J'éteind le W D";</tag>
+                </item>
+
+                <item>
+                    Ejecte
+                    <tag>out.action.cmd="X";out.action.ttsAction="J'éjecte le W D";</tag>
+                </item>
+
+                <item>
+                    Arréte
+                    <tag>out.action.cmd="t";out.action.ttsAction="Le W D est arrété";</tag>
+                </item>
+
+<!--- Navigation §--->                
+
+                <item>
+                    Met en pause
+                    <tag>out.action.cmd="p";out.action.ttsAction="Le W D est en pause";</tag>
+                </item>
+
+                <item>
+                    Lis
+                    <tag>out.action.cmd="p";out.action.ttsAction="Le W D est en lecture";</tag>
+                </item>
+
+                <item>
+                    Piste suivante
+                    <tag>out.action.cmd="]";out.action.ttsAction="Piste suivante sélectionnée";</tag>
+                </item>
+
+                <item>
+                    Piste précédante
+                    <tag>out.action.cmd="[";out.action.ttsAction="Piste précedante sélectionnée";</tag>
+                </item>
+
+                <item>
+                    Avance
+                    <tag>out.action.cmd="I";out.action.ttsAction="W D en avance rapide";</tag>
+                </item>
+
+                <item>
+                    Recule
+                    <tag>out.action.cmd="H";out.action.ttsAction="WD en retour rapide";</tag>
+                </item>
+
+<!--- Divers §--->
+
+                <item>
+                    Touche options
+                    <tag>out.action.cmd="G";out.action.ttsAction="Touche options";</tag>
+                </item>
+
+                <item>
+                    Touche retour
+                    <tag>out.action.cmd="T";out.action.ttsAction="Touche retour";</tag>
+                </item>
+
+                <item>
+                    Touche entrée
+                    <tag>out.action.cmd="n";out.action.ttsAction="Touche entrée";</tag>
+                </item>
+
+                <item>
+                    Touche cherche
+                    <tag>out.action.cmd="E";out.action.ttsAction="Touche cherche";</tag>
+                </item>
+
+<!--- Navigation §--->
+
+                <item>
+                    Touche homme
+                    <tag>out.action.cmd="o";out.action.ttsAction="Touche homme";</tag>
+                </item>
+
+                <item>
+                    Touche haut
+                    <tag>out.action.cmd="u";out.action.ttsAction="Touche haut";</tag>
+                </item>
+
+                <item>
+                    Touche bas
+                    <tag>out.action.cmd="d";out.action.ttsAction="Touche bas";</tag>
+                </item>
+
+                <item>
+                    Touche gauche
+                    <tag>out.action.cmd="l";out.action.ttsAction="Touche gauche";</tag>
+                </item>
+
+                <item>
+                    Touche droite
+                    <tag>out.action.cmd="r";out.action.ttsAction="Touche droite";</tag>
+                </item>
+
+<!--- Fin de phrase §--->
+
+            </one-of>
+
+            <item repeat="0-1">
+
+                <one-of>
+
+                    <item>
+                        du W D
+                        <tag>out.action.gender="du ";</tag>
+                    </item>
+
+                    <item>
+                        le W D
+                        <tag>out.action.gender="le ";</tag>
+                    </item>
+                </one-of>
+            </item>
+
+        </item>
+
+        <tag>out.action._attributes.uri="http://127.0.0.1:8080/sarah/WDLiveRemote";</tag>
+    </rule>
+</grammar>
