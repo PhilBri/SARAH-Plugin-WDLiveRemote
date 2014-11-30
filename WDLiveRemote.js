@@ -16,18 +16,18 @@ Alive\x0D\x0A\x0D\x0A{"remote":"w"}*/
 exports.action = function ( data , callback , config , SARAH ) {
     var cfg = config.module.WDLiveRemote;
     var cmd = data.cmd;
-
+/*
     if ( ! cfg.WDLive_IP ) {
         console.log ( 'WDLiveRemote => Pas d\'adresse IP configurée dans WDLiveRemote.prop !' );
         callback ({ 'tts': 'Adresse I P incorrecte ou absente !' });
         return;
     }
-
-    var myForm  = require ( 'querystring' ).parse ( 'remote =' +cmd);  
+*/
+    var myForm  = require ( 'querystring' ).parse ( 'remote =' + cmd);  
 
     request.post ({
 
-        uri     :   'http://' + WDLive_IP + '/cgi-bin/toServerValue.cgi', 
+        uri     :   'http://192.168.1.25:3388/cgi-bin/toServerValue.cgi', 
         headers :   { 
                     'Content-Length': 14,
                     'Connection'    : 'Keep-Alive',
