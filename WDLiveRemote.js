@@ -22,8 +22,8 @@ exports.action = function ( data , callback , config , SARAH ) {
         callback ({ 'tts': 'Adresse I P incorrecte ou absente !' });
         return;
     }
-   
-    var request = require ( 'request' );
+
+    var myForm  = require ( 'querystring' ).parse ( 'remote =' +cmd);  
 
     request.post ({
 
@@ -33,7 +33,7 @@ exports.action = function ( data , callback , config , SARAH ) {
                     'Connection'    : 'Keep-Alive',
                     'Content-Type'  : 'text/plain'
                     },
-        form    :   {'remote' : cmd}
+        form    :   myForm
 
     }, function ( err, httpResponse, body ) {
         
