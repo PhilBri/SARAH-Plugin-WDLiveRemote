@@ -27,7 +27,7 @@ exports.action = function ( data , callback , config , SARAH ) {
 
     request.post ({
 
-        uri     :   'http://192.168.1.25:3388/cgi-bin/toServerValue.cgi', 
+        uri     :   'http://192.168.1.25:30000/cgi-bin/toServerValue.cgi', 
         headers :   { 
                     'Content-Length': 14,
                     'Connection'    : 'Keep-Alive',
