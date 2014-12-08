@@ -23,13 +23,15 @@ exports.action = function ( data , callback , config , SARAH ) {
         return;
     }
 */
-    var myForm  = require ( 'querystring' ).parse ( 'remote =' + cmd);  
+    var myForm  = require ( 'querystring' ).parse ( 'remote =' + cmd);
+    var myLen   = require ( 'querystring' ).stringify ( myForm ).length,
+ 
 
     request.post ({
 
         uri     :   'http://192.168.1.25:10184/cgi-bin/toServerValue.cgi', 
         headers :   { 
-                    'Content-Length': 14,
+                    'Content-Length': myLen,
                     'Connection'    : 'Keep-Alive',
                     'Content-Type'  : 'text/plain'
                     },
