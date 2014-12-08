@@ -1,6 +1,6 @@
 {
 	"modules" : { 
-		"wdliveremote"  : {
+		"WDLiveRemote"  : {
 			"description": "SARAH controle les WD Live",
 			"version" : "0.1",
 			"WDLive_IP": ""
