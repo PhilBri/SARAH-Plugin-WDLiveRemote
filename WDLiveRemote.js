@@ -24,7 +24,7 @@ exports.action = function ( data , callback , config , SARAH ) {
     }
 */
     var myForm  = require ( 'querystring' ).parse ( 'remote =' + cmd);
-    var myLen   = require ( 'querystring' ).stringify ( myForm ).length,
+    var myLen   = require ( 'querystring' ).stringify ( myForm ).length; // only 14 ?
  
 
     request.post ({
